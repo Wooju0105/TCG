@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for('static',filename='Gen.css')}}">
+        
+        <link rel="stylesheet" href="Gen.css">
+        <title>Document</title>
+</head>
+
+<body>
+    <ka><a class="active" href="file:///H:/TCG/templates/Arc.html" target="_blank">
+        <nav>Seven Arcangels</nav>
+    </a></ka>
+
+
+    <ka><a href="file:///C:/Users/talon/Desktop/kazuha/Combat%20info.html" target="_blank">
+        <nav>About</nav>
+        <img src ="static/image/pngwing.com.png" style="width:18px; height:18px;">
+    </a></ka>
+
+
+    <zu><a href="file:///C:/Users/talon/Desktop/kazuha/In-game.html" class="Kazuha" target="_blank">
+      <nav>Roles</nav>
+      <img src ="static/image/ty.png" style="width:14px; height:20px;">
+    </a></zu>
+
+
+    <ha><a href="file:///C:/Users/talon/Desktop/kazuha/Recommendations.html" target="_blank">
+    <nav>Appearances in media</nav>
+    <img src= "static/image/au.png" style="width:15px; height:15px;">
+    </a></ha>
+
+    <figure>
+    <img class="title" src="static/image/tyrael.gif"  width="1500" height="800"> 
+    <div class="absl top_margin centre">
+      <h1 class="big title_text">
+      <span class="text_colour">Seven Archangels</span>
+      </h1>
+    </div>
+
+    <div class="wack-display-middle wong-margin-top wing-center">
+        <h2 class="wing-xxlarge wing-text-white"><b>
+          <img src="static/image/pngwing.com.png" width="60" height="60">
+          </b><span>Uriel, Raphael, Raguel, Michael, Saraqael, Gabriel, Remiel</span>
+          <img src="static/image/ty.png" width="35" height="60">
+        </b></span></h2>
+    </div>
+
+    <div class="spacing">
+    </div>
+
+    <body>
+      <div class="container">
+        <h1>Please login</h1>
+        <br>
+        <form action="" method="post">
+          <input type="text" placeholder="Username" name="username" value="{{
+            request.form.username }}">
+           <input type="password" placeholder="Password" name="password" value="{{
+            request.form.password }}">
+          <input class="btn btn-default" type="submit" value="Login">
+        </form>
+        {% if error %}
+          <p class="error"><strong>Error:</strong> {{ error }}
+        {% endif %}
+      </div>
+    </body>
+
+    <div class="spacing">
+    </div>+
+
+    <table>
+      <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Delete?</th>
+      </tr>
+      {% for item in results %}
+      <tr>
+          <td>{{ item[1] }}</td>
+          <td>{{ item[2] }}</td>
+          <td>
+              <form action="/delete" method="post">
+              <input type="hidden" name="item_name" value="{{item[0]}}">
+              <input type="submit" value="delete">
+              </form>
+          </td>
+      </tr>
+      {% endfor %}
+  </table>
+
+    <div class="spacing">
+    </div>
+    
+    <div class="box">
+        <div>
+          <img src="static/image/99CC524A5CA39C9C01.jpg" class="illust">
+        </div>
+    </div>
+
+    <div class="spacing">
+    </div>
+
+    <div class="box">
+        <div>
+          <img src="static/image/208b29179598da0e84c31f4bc63b4e4c.jpg" class="illust1">
+        </div>
+    </div>
+
+    <div class="spacing">
+    </div>
+
+    <div class="box">
+        <div>
+          <img src="static/image/20201122195354_bbzqdand.jpg" class="illust">
+        </div>
+    </div>
+
+    <div class="spacing">
+    </div>
+
+    <div class="box">
+        <div>
+          <img src="static/image/173650933e4358b52.jpg" class="illust1">
+        </div>
+    </div>
+
+            <div class="spacing">
+        </div>
+
+    <div class="box">
+        <div>
+          <img src="static/image/istockphoto-903405958-1024x1024.jpg" class="illust">
+        </div>
+    </div>
+  </body>
+</html>
